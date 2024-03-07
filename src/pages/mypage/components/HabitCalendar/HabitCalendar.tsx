@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { useContext, useState } from 'react';
 import Calendar from 'react-calendar';
-import { CiCalendar } from 'react-icons/ci';
+import { IoCalendarClearOutline } from '@react-icons/all-files/io5/IoCalendarClearOutline';
 import { getMyPosts } from 'api/myPostAPI';
 import calendarSpring from 'assets/calendarSpring.png';
 import mangofavicon from 'assets/mango-favicon.png';
@@ -94,7 +94,7 @@ const HabitCalendar = ({ date }: any) => {
           }}
         />
         <St.CurrentDate>
-          <CiCalendar />
+          <IoCalendarClearOutline />
           현재 날짜 {dayjs(date).format('YYYY년 MM월 DD일')}
         </St.CurrentDate>
       </St.StyleCalendar>

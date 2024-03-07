@@ -1,6 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { useContext, useEffect, useState } from 'react';
-import { GoCalendar, GoHeart, GoQuestion, GoTasklist } from 'react-icons/go';
+// import { GoCalendar, GoHeart, GoQuestion, GoTasklist } from 'react-icons/go';
+import { IoCalendarClearOutline } from '@react-icons/all-files/io5/IoCalendarClearOutline';
+import { FaRegHeart } from '@react-icons/all-files/fa/FaRegHeart';
+import { BsQuestionCircle } from '@react-icons/all-files/bs/BsQuestionCircle';
+import { VscTasklist } from '@react-icons/all-files/vsc/VscTasklist';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { getMyPosts, getUserRanking } from 'api/myPostAPI';
 import postCountIcon from 'assets/icons/postCountIcon.png';
@@ -123,7 +127,7 @@ function MyProfile() {
                   <div style={{ display: 'flex' }}>
                     랭킹
                     <div style={{ cursor: 'pointer' }} onClick={ClickedRankingToggleBtn}>
-                      <GoQuestion style={{ fontSize: '15px', marginLeft: '5px', cursor: 'pointer' }} />
+                      <BsQuestionCircle style={{ fontSize: '15px', marginLeft: '5px', cursor: 'pointer' }} />
                     </div>
                     {isClickedRanking ? (
                       <div>
@@ -152,7 +156,7 @@ function MyProfile() {
                     <div style={{ display: 'flex' }}>
                       <div>등급</div>
                       <div style={{ cursor: 'pointer' }} onClick={ClickedGuideToggleBtn}>
-                        <GoQuestion style={{ fontSize: '15px', marginLeft: '5px', cursor: 'pointer' }} />
+                        <BsQuestionCircle style={{ fontSize: '15px', marginLeft: '5px', cursor: 'pointer' }} />
                       </div>
                     </div>
 
@@ -186,7 +190,7 @@ function MyProfile() {
             }}
           >
             <div>
-              <GoCalendar />
+              <IoCalendarClearOutline />
               <span>캘린더</span>
             </div>
           </St.TabButton>
@@ -197,7 +201,7 @@ function MyProfile() {
             }}
           >
             <div>
-              <GoTasklist />
+              <VscTasklist />
               <span>내 게시물</span>
             </div>
           </St.TabButton>
@@ -208,7 +212,7 @@ function MyProfile() {
             }}
           >
             <div>
-              <GoHeart />
+              <FaRegHeart />
               <span>좋아요</span>
             </div>
           </St.TabButton>

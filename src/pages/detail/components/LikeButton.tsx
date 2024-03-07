@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { arrayRemove, arrayUnion, doc, updateDoc } from 'firebase/firestore';
-import { GoHeart, GoHeartFill } from 'react-icons/go';
+import { FaRegHeart } from '@react-icons/all-files/fa/FaRegHeart';
+import { FaHeart } from '@react-icons/all-files/fa/FaHeart';
 import { useNavigate } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
@@ -111,7 +112,7 @@ function LikeButton({ foundDetailPost, buttonSize, likeFalseColor, likeTrueColor
       $likeFalseColor={likeFalseColor}
       $likeTrueColor={likeTrueColor}
     >
-      {isPostLiked ? <GoHeartFill /> : <GoHeart />}
+      {isPostLiked ? <FaHeart /> : <FaRegHeart />}
     </LikeButtonIcon>
   );
 }

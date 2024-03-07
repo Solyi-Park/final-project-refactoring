@@ -8,7 +8,9 @@ import { useLikeButton } from 'hooks/useLikeButton';
 import useSwiperNavigation from 'hooks/useSwiperNavigation';
 import { QUERY_KEYS } from 'query/keys';
 import { useContext, useEffect, useState } from 'react';
-import { GoComment, GoEye, GoHeart } from 'react-icons/go';
+import { GoComment } from '@react-icons/all-files/go/GoComment';
+import { GoEye } from '@react-icons/all-files/go/GoEye';
+import { FaRegHeart } from '@react-icons/all-files/fa/FaRegHeart';
 import { Link } from 'react-router-dom';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
@@ -147,7 +149,7 @@ const Carousel = () => {
                               <span>{post.viewCount?.toLocaleString() || 0}</span>
                             </div>
                             <div>
-                              <GoHeart />
+                              <FaRegHeart />
                               <span>{post.likeCount?.toLocaleString() || 0}</span>
                             </div>
                             <div>

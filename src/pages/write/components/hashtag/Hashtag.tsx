@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { GoPlus, GoSearch, GoX } from 'react-icons/go';
+import { FaPlus } from '@react-icons/all-files/fa/FaPlus';
+import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose';
+import { IoSearchOutline } from '@react-icons/all-files/io5/IoSearchOutline';
 import { useRecoilState } from 'recoil';
 import { useModal } from 'hooks/useModal';
 import { postInputState } from 'recoil/posts';
@@ -77,7 +79,7 @@ function Hashtag() {
           return (
             <St.SingleHashtag key={idx} onClick={() => onHandleSelectHashtag(hashtag)}>
               {hashtag}
-              <GoPlus />
+              <FaPlus />
             </St.SingleHashtag>
           );
         })}
@@ -86,7 +88,7 @@ function Hashtag() {
         {hashtags.map((tag, idx) => (
           <St.SingleHashtag key={idx} onClick={() => removeHashtag(tag)}>
             {tag}
-            <GoX />
+            <AiOutlineClose />
           </St.SingleHashtag>
         ))}
       </St.SelectedTagList>
@@ -99,7 +101,7 @@ function Hashtag() {
           placeholder="해시태그 + Enter"
         />
         <St.SearchIcon>
-          <GoSearch />
+          <IoSearchOutline />
         </St.SearchIcon>
       </St.HashtagInputContainer>
     </St.HashtagArea>

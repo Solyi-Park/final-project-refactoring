@@ -1,4 +1,5 @@
-import { GoHeart, GoHeartFill } from 'react-icons/go';
+import { FaRegHeart } from '@react-icons/all-files/fa/FaRegHeart';
+import { FaHeart } from '@react-icons/all-files/fa/FaHeart';
 import styled from 'styled-components';
 import theme from 'types/styles/theme';
 
@@ -402,13 +403,13 @@ const LikeButton = styled.button`
   height: 25px;
 `;
 
-const HeartIcon = styled(GoHeart)`
+const HeartIcon = styled(FaRegHeart)`
   color: #888888;
   font-size: 25px;
   cursor: pointer;
 `;
 
-const HeartFillIcon = styled(GoHeartFill)`
+const HeartFillIcon = styled(FaHeart)`
   color: red;
   font-size: 26px;
   cursor: pointer;

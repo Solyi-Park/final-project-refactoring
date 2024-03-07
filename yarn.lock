@@ -3152,6 +3152,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-icons/all-files@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "@react-icons/all-files@npm:4.1.0"
+  peerDependencies:
+    react: "*"
+  checksum: 10c0/6327623b857ba2a9fdf835f2e7029feec7acdd53dc14163085789518d7e1323deb7db649b660d3bad3991285e8408238ad4d09c37b9a0ba7d2601dd74ac0ae56
+  languageName: node
+  linkType: hard
+
 "@remix-run/router@npm:1.14.2":
   version: 1.14.2
   resolution: "@remix-run/router@npm:1.14.2"
@@ -11184,6 +11193,7 @@ __metadata:
     "@cloudinary/url-gen": "npm:^1.16.1"
     "@craco/craco": "npm:^7.1.0"
     "@craco/types": "npm:^7.1.0"
+    "@react-icons/all-files": "npm:^4.1.0"
     "@tanstack/react-query": "npm:^5.17.1"
     "@tanstack/react-query-devtools": "npm:^5.17.18"
     "@testing-library/jest-dom": "npm:^5.14.1"
@@ -11206,7 +11216,6 @@ __metadata:
     react-helmet: "npm:^6.1.0"
     react-helmet-async: "npm:^2.0.4"
     react-hook-form: "npm:^7.49.3"
-    react-icons: "npm:^4.12.0"
     react-image-file-resizer: "npm:^0.4.8"
     react-js-pagination: "npm:^3.0.3"
     react-quill: "npm:^2.0.0"
@@ -13225,15 +13234,6 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
   checksum: 10c0/f8e5b2dcc3d97c820b4fbac262d7e914d74f385f26f34da31b8efc6c0f32ba995f2a2330bdfd3d8b7c8b56a52349a0cbc0c0dbe9053b3971e5e0c78003dfb7f0
-  languageName: node
-  linkType: hard
-
-"react-icons@npm:^4.12.0":
-  version: 4.12.0
-  resolution: "react-icons@npm:4.12.0"
-  peerDependencies:
-    react: "*"
-  checksum: 10c0/2170f43031ee7365539f72d4075cbe6c7fbf9a66d6cf4494aa9393b194272da0564f5b19d1b24dbfc567c0ac89f5fe5b8974d92dd83f61e252388dde6a226fb8
   languageName: node
   linkType: hard
 
