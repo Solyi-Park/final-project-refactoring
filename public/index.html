@@ -15,16 +15,6 @@
       integrity="%REACT_APP_KAKAO_INTERGRITY%"
       crossorigin="anonymous"
     ></script> -->
-    <script
-      src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.0/kakao.min.js"
-      integrity="%REACT_APP_KAKAO_INTERGRITY%"
-      crossorigin="anonymous"
-      async
-    ></script>
-
-    <script>
-      Kakao.init('%REACT_APP_KAKAO_API_KEY%');
-    </script>
 
     <meta property="og:site_name" content="Mango" />
     <meta property="og:title" content="친환경 라이프 스타일 커뮤니티" />
@@ -38,7 +28,15 @@
     <title>Mango</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script
+      src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.0/kakao.min.js"
+      integrity="%REACT_APP_KAKAO_INTERGRITY%"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      Kakao.init('%REACT_APP_KAKAO_API_KEY%');
+    </script>
   </body>
 </html>
