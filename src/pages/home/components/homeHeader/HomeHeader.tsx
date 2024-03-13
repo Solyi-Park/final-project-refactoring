@@ -59,13 +59,10 @@ const HomeHeader = () => {
                   return (
                     <SwiperSlide key={idx}>
                       {item ? (
-                        <picture>
-                          <source srcSet="home/AdminPostIllustration.webp" />
-                          <img
-                            src={(item.coverImages[1] && item.coverImages[1].url) || '/home/AdminPostIllustration.png'}
-                            alt={`Slide ${idx}`}
-                          />
-                        </picture>
+                        <img
+                          src={(item.coverImages[1] && item.coverImages[1].url) || '/home/AdminPostIllustration.png'}
+                          alt={`Slide ${idx}`}
+                        />
                       ) : (
                         <Loader />
                       )}
