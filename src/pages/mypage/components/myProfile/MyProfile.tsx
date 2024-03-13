@@ -7,8 +7,10 @@ import { BsQuestionCircle } from '@react-icons/all-files/bs/BsQuestionCircle';
 import { VscTasklist } from '@react-icons/all-files/vsc/VscTasklist';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { getMyPosts, getUserRanking } from 'api/myPostAPI';
-import postCountIcon from 'assets/icons/postCountIcon.png';
-import rankingIcon from 'assets/icons/rankingIcon.png';
+// import postCountIconPNG from 'assets/icons/postCountIcon.png';
+// import postCountIconWEBP from 'assets/icons/postCountIcon.webp';
+// import rankingIconPNG from 'assets/icons/rankingIcon.png';
+// import rankingIconWEBP from 'assets/icons/rankingIcon.webp';
 import { AuthContext } from 'context/AuthContext';
 import { QUERY_KEYS } from 'query/keys';
 import HabitCalendar from '../HabitCalendar/HabitCalendar';
@@ -119,7 +121,10 @@ function MyProfile() {
                 <St.PostInfoBox>
                   <div>게시물 수</div>
                   <St.PostInfoIcon>
-                    <img src={postCountIcon} />
+                    <picture>
+                      <source srcSet="icons/postCountIcon.webp" type="image/webp" />
+                      <img src="icons/postCountIcon.png" alt="post-count-icon" />
+                    </picture>
                     <div>{myPosts ? myPosts.length : '-'}개</div>
                   </St.PostInfoIcon>
                 </St.PostInfoBox>
@@ -141,7 +146,10 @@ function MyProfile() {
                     ) : null}
                   </div>
                   <St.RankingIcon>
-                    <img src={rankingIcon} />
+                    <picture>
+                      <source srcSet="icons/rankingIcon.webp" type="image/webp" />
+                      <img src="icons/rankingIcon.png" alt="ranking-icon" />
+                    </picture>
                     <div>
                       {authCurrentUser && userRanking
                         ? userRanking.findIndex((r) => r.uid === authCurrentUser.uid) >= 0

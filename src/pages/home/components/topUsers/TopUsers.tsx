@@ -4,7 +4,8 @@ import firstPlace from 'assets/home/1stPlace.png';
 import secondPlace from 'assets/home/2ndPlace.png';
 import thirdPlace from 'assets/home/3rdPlace.png';
 import TopUsersSkeleton from './skeleton/TopUsersSkeleton';
-import defaultUserProfile from 'assets/realMango.png';
+// import mangoDefaultProfileJPG from 'assets/realMango.png';
+// import mangoDefaultProfileWEBP from 'assets/realMango.webp';
 import St from './style';
 import { QUERY_KEYS } from 'query/keys';
 import { getAllUsers } from 'api/authApi';
@@ -56,12 +57,21 @@ const TopUsers = () => {
             return (
               <St.UserInfo key={index}>
                 <St.ProfileImage>
-                  <img src={user?.profileImg || defaultUserProfile} alt="profile" />
+                  <img src={user?.profileImg || '/images/realMangoBPNG.png'} alt="profile" />
                 </St.ProfileImage>
                 <St.UserName>
-                  {index === 0 && <img src={firstPlace} alt="firstPlace" />}
-                  {index === 1 && <img src={secondPlace} alt="secondPlace" />}
-                  {index === 2 && <img src={thirdPlace} alt="thirdPlace" />}
+                  <picture>
+                    <source srcSet="/home/1stPlace.webp" />
+                    {index === 0 && <img src="/home/1stPlace.png" alt="firstPlace" />}
+                  </picture>
+                  <picture>
+                    <source srcSet="/home/2ndPlace.webp" />
+                    {index === 1 && <img src="home/2ndPlace.png" alt="secondPlace" />}
+                  </picture>
+                  <picture>
+                    <source srcSet="/home/3rdPlace.webp" />
+                    {index === 2 && <img src="/home/3rdPlace.png" alt="thirdPlace" />}
+                  </picture>
                   <span>{user?.displayName}</span>
                 </St.UserName>
               </St.UserInfo>

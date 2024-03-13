@@ -1,7 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import { getAllUsers } from 'api/authApi';
-import googleLogo from 'assets/icons/googleLogo.png';
-import mangofavicon from 'assets/mango-favicon.png';
+// import googleIconPNG from 'assets/icons/googleLogo.png';
+// import googleIconWEBP from 'assets/icons/googleLogo.webp';
+// import mangoFavPNG from 'assets/mango-favicon.png';
+// import mangoFavWEBP from 'assets/mango-favicon.webp';
 import { AuthContext } from 'context/AuthContext';
 import {
   GoogleAuthProvider,
@@ -140,7 +142,11 @@ function Login() {
       <St.LogoContainer>
         <St.SubTitle>건강한 친환경 습관 만들기</St.SubTitle>
         <St.LogoBox>
-          <St.MangoLogo src={mangofavicon} />
+          <picture>
+            <source srcSet="images/mango-favicon.webp" type="image/webp" />
+            <St.MangoLogo src="images/mango-favicon.png" />
+          </picture>
+
           <St.Logo>MANGO</St.Logo>
         </St.LogoBox>
         <St.SignUpTitle>로그인</St.SignUpTitle>
@@ -175,7 +181,10 @@ function Login() {
         <St.LoginContainer>
           <St.SignUpAndLoginBtn type="submit">로그인</St.SignUpAndLoginBtn>
           <St.GoogleLoginBtn onClick={handleGoogleLogin}>
-            <img src={googleLogo} alt="Google Icon" />
+            <picture>
+              <source srcSet="icons/googleLogo.webp" type="image/webp" />
+              <img src="icons/googleLogo.png" alt="Google Icon" />
+            </picture>
             &nbsp;구글로그인
           </St.GoogleLoginBtn>
         </St.LoginContainer>

@@ -1,11 +1,14 @@
-import mangoMission from 'assets/about/about-why-mango.png';
+// import mangoMission from 'assets/about/about-why-mango.png';
 import St from './style';
 
 function MangoMission() {
   return (
     <St.WhyContainer>
       <St.Mission>
-        <img src={mangoMission} alt="mango-intro" />
+        <picture>
+          <source srcSet="about/about-why-mango.webp" type="image/webp" />
+          <img src="about/about-why-mango.png" alt="mango-intro" />
+        </picture>
         <St.Textbox>
           <St.SubTitle>
             <p>아직까지 우리에게 낯선 </p>

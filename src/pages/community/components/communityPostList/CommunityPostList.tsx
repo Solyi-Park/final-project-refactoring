@@ -7,15 +7,17 @@ import {
   useQuery,
   useQueryClient
 } from '@tanstack/react-query';
-import mangoCover from 'assets/mangoDefaultCover.png';
-import defaultUserProfile from 'assets/realMango.png';
+// import mangoCoverPNG from 'assets/mangoDefaultCover.png';
+// import mangoCoverWEBP from 'assets/mangoDefaultCover.webp';
+// import mangoCommentPNG from 'assets/realMango.png';
+// import mangoCommentWEBP from 'assets/realMango.webp';
 import Loader from 'components/Loader';
 import PostContentPreview from 'components/PostContentPreview';
 import PostsSkeleton from 'components/mypage/postsSkeleton/PostsSkeleton';
 import { DocumentData, QueryDocumentSnapshot, arrayRemove, arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import { useModal } from 'hooks/useModal';
 import { QUERY_KEYS } from 'query/keys';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import { GoComment } from '@react-icons/all-files/go/GoComment';
 import { GoEye } from '@react-icons/all-files/go/GoEye';
 import { FaRegHeart } from '@react-icons/all-files/fa/FaRegHeart';
@@ -265,19 +267,26 @@ function CommunityPostList({ queryKey, queryFn, sortBy }: PostListProps) {
               return (
                 <Link key={post.id} to={`/detail/${post.id}`}>
                   <SinglePost>
-                    <PostImg
-                      src={getThumbnailSource(post.coverImages)}
-                      alt={post.title}
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.onerror = null;
-                        target.src = mangoCover;
-                      }}
-                    />
+                    <picture>
+                      <source srcSet="/images/mangoDefaultCover.webp" type="image/webp" />
+                      <PostImg
+                        src={getThumbnailSource(post.coverImages)}
+                        alt={post.title}
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.onerror = null;
+                          target.src = '/images/mangoDefaultCover.png';
+                        }}
+                      />
+                    </picture>
+
                     <PostInfoContainer>
                       <PostCardHeader>
                         <PostCardHeaderLeft>
-                          <img src={user?.profileImg || defaultUserProfile} alt="profile" />
+                          <picture>
+                            <source srcSet="/images/realMango.webp" type="image/webp" />
+                            <img src={user?.profileImg || 'i/mages/realMangoBPNG.png'} alt="profile" />
+                          </picture>
                           <AuthorNameAndDate>
                             <span>{user?.displayName}</span>
                             <p>{getFormattedDate_yymmdd(post.createdAt!)}</p>

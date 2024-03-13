@@ -7,9 +7,10 @@ import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 import { getAdminPosts } from 'api/homeApi';
-import defaultIllustration from 'assets/home/AdminPostIllustration.png';
+// import defaultIllustrationPNG from 'assets/home/AdminPostIllustration.png';
+// import defaultIllustrationWEBP from 'assets/home/AdminPostIllustration.webp';
 import Loader from 'components/Loader';
-import St from '../popularContents/carousel/style';
+// import St from '../popularContents/carousel/style';
 import HomeHeaderCenterBox from './homeHeaderCenterBox/HomeHeaderCenterBox';
 import HomeHeaderSkeleton from './skeleton/HomeHeaderSkeleton';
 import { QUERY_KEYS } from 'query/keys';
@@ -58,10 +59,13 @@ const HomeHeader = () => {
                   return (
                     <SwiperSlide key={idx}>
                       {item ? (
-                        <img
-                          src={(item.coverImages[1] && item.coverImages[1].url) || defaultIllustration}
-                          alt={`Slide ${idx}`}
-                        />
+                        <picture>
+                          <source srcSet="home/AdminPostIllustration.webp" />
+                          <img
+                            src={(item.coverImages[1] && item.coverImages[1].url) || '/home/AdminPostIllustration.png'}
+                            alt={`Slide ${idx}`}
+                          />
+                        </picture>
                       ) : (
                         <Loader />
                       )}

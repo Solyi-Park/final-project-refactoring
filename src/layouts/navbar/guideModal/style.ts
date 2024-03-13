@@ -41,6 +41,11 @@ const GuideImage = styled.img`
   border-radius: 10px;
 `;
 
+const GuideImageWebp = styled.source`
+  object-fit: fill;
+  border-radius: 10px;
+`;
+
 const NavigationButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -82,4 +87,12 @@ const PageCount = styled.div`
   font-weight: 400;
 `;
 
-export default { ModalBackdrop, ModalContent, GuideImage, NavigationButtonContainer, NavButton, PageCount };
+export default {
+  ModalBackdrop,
+  ModalContent,
+  GuideImage,
+  GuideImageWebp,
+  NavigationButtonContainer,
+  NavButton,
+  PageCount
+};

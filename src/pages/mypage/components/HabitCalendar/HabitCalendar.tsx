@@ -4,8 +4,10 @@ import { useContext, useState } from 'react';
 import Calendar from 'react-calendar';
 import { IoCalendarClearOutline } from '@react-icons/all-files/io5/IoCalendarClearOutline';
 import { getMyPosts } from 'api/myPostAPI';
-import calendarSpring from 'assets/calendarSpring.png';
-import mangofavicon from 'assets/mango-favicon.png';
+// import calendarSpringPNG from 'assets/calendarSpring.png';
+// import calendarSpringWEBP from 'assets/calendarSpring.webp';
+// import mangoFavPNG from 'assets/mango-favicon.png';
+// import mangoFavWEBP from 'assets/mango-favicon.webp';
 import { AuthContext } from 'context/AuthContext';
 import { QUERY_KEYS } from 'query/keys';
 import { getFormattedDateCustom } from 'util/formattedDateAndTime';
@@ -46,7 +48,10 @@ const HabitCalendar = ({ date }: any) => {
         <St.CalendarContainer>
           <St.CalendarIntroduce>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src={mangofavicon} alt="mago-Logo" />
+              <picture>
+                <source srcSet="/images/mango-favicon.webp" type="image/webp" />
+                <img src="/images/mango-favicon.png" alt="mago-Logo" />
+              </picture>
               <span>망고 달력</span>
             </div>
 
@@ -57,10 +62,22 @@ const HabitCalendar = ({ date }: any) => {
               <p>글을 쓰면 망고스티커를 드려요!</p>
             </div>
           </St.CalendarIntroduce>
-          <St.CalendarSpring1 src={calendarSpring} />
-          <St.CalendarSpring2 src={calendarSpring} />
-          <St.CalendarSpring3 src={calendarSpring} />
-          <St.CalendarSpring4 src={calendarSpring} />
+          <picture>
+            <source srcSet="images/calendarSpring.webp" type="image/webp" />
+            <St.CalendarSpring1 src="images/calendarSpring.png" />
+          </picture>
+          <picture>
+            <source srcSet="images/calendarSpring.webp" type="image/webp" />
+            <St.CalendarSpring2 src="images/calendarSpring.png" />
+          </picture>
+          <picture>
+            <source srcSet="images/calendarSpring.webp" type="image/webp" />
+            <St.CalendarSpring3 src="images/calendarSpring.png" />
+          </picture>
+          <picture>
+            <source srcSet="images/calendarSpring.webp" type="image/webp" />
+            <St.CalendarSpring4 src="images/calendarSpring.png" />
+          </picture>
           <St.CalendarTitle>Calendar</St.CalendarTitle>
         </St.CalendarContainer>
         <Calendar
@@ -79,12 +96,16 @@ const HabitCalendar = ({ date }: any) => {
                   <div className="habitDayContainer" key={formattedDate}></div>
                   <St.CalendarContentsContainer>
                     <div />
-                    <img
-                      key={formattedDate}
-                      className="habitImage"
-                      src={mangofavicon}
-                      alt={`habit-sticker-${formattedDate}`}
-                    />
+                    <picture>
+                      <source srcSet="images/mango-favicon.webp" type="image/webp" />
+                      <img
+                        key={formattedDate}
+                        className="habitImage"
+                        src="images/mango-favicon.png"
+                        alt={`habit-sticker-${formattedDate}`}
+                      />
+                    </picture>
+
                     <St.PostCount> x{postCount}</St.PostCount>
                   </St.CalendarContentsContainer>
                 </>

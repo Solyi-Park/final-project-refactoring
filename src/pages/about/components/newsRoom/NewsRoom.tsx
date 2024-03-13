@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getNews } from 'api/newsApi';
-import swipeLeft from 'assets/about/swipe-left-white.png';
-import swipeRight from 'assets/about/swipe-right-white.png';
+// import swipeLeft from 'assets/about/swipe-left-white.png';
+// import swipeRight from 'assets/about/swipe-right-white.png';
 import useRoleCheck from 'hooks/useRoleCheck';
 import { QUERY_KEYS } from 'query/keys';
 import { useState } from 'react';
@@ -106,9 +106,21 @@ function NewsRoom() {
               ))}
             </St.StyledSwiper>
             <St.NavigationButtonContainer>
-              <div onClick={goPrev}>{currentIndex > 0 && <img src={swipeLeft} alt="Previous" />}</div>
+              <div onClick={goPrev}>
+                {currentIndex > 0 && (
+                  <picture>
+                    <source srcSet="about/swipe-left-white.webp" type="image/webp" />
+                    <img src="about/swipe-left-white.png" alt="Previous" />
+                  </picture>
+                )}
+              </div>
               <div onClick={goNext}>
-                {currentIndex < Math.floor(newsPosts.length / 4) && <img src={swipeRight} alt="Next" />}
+                {currentIndex < Math.floor(newsPosts.length / 4) && (
+                  <picture>
+                    <source srcSet="about/swipe-right-white.webp" type="image/webp" />
+                    <img src="about/swipe-right-white.png" alt="Next" />
+                  </picture>
+                )}
               </div>
             </St.NavigationButtonContainer>
           </>

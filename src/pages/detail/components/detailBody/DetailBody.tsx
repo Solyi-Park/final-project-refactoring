@@ -1,13 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 import { getUser } from 'api/authApi';
-import defaultImage from 'assets/defaultImg.jpg';
+// import defaultProfileJPG from 'assets/defaultProfileImg.jpg';
+// import defaultProfileWEBP from 'assets/defaultProfileImg.webp';
 import kakao from 'assets/detail/Kakao-icon.png';
 import link from 'assets/detail/link-bold-icon.png';
 import { useState } from 'react';
 import { GoComment } from '@react-icons/all-files/go/GoComment';
 
 import { getComments } from 'api/commentApi';
-import defaultThumbnail from 'assets/mangoThumbnail.png';
+// import defaultThumbnail from 'assets/mangoThumbnail.png';
 import useKaKaoShare from 'hooks/useKaKaoShare';
 import { useModal } from 'hooks/useModal';
 import { QUERY_KEYS } from 'query/keys';
@@ -75,14 +76,14 @@ function DetailBody({ foundDetailPost }: FoundDetailPostProps) {
       <MetaTag
         title={foundDetailPost.title}
         description={foundDetailPost.content}
-        image={foundDetailPost.coverImages[0]?.url || defaultThumbnail}
+        image={foundDetailPost.coverImages[0]?.url || '/images/mangoThumbnail.png'}
         url={`https://mymango.today/detail/${foundDetailPost.id}`}
       />
       <St.BodyContainer>
         <St.BodyHeader>
           <St.PostInfo>
             <div>
-              <img src={author?.profileImg || defaultImage} alt="profile" />
+              <img src={author?.profileImg || '/images/defaultProfileImg.jpg'} alt="profile" />
             </div>
             <div>
               <p>{author?.displayName ?? '작성자 이름 없음'}</p>
@@ -128,7 +129,7 @@ function DetailBody({ foundDetailPost }: FoundDetailPostProps) {
                 const data = {
                   title: foundDetailPost.title,
                   detailURL,
-                  imageUrl: foundDetailPost.coverImages[0]?.url || defaultThumbnail,
+                  imageUrl: foundDetailPost.coverImages[0]?.url || '/images/mangoThumbnail.png',
                   description: extractFirst50Words(foundDetailPost.content)
                 };
                 handleShareKakaoClick(data);

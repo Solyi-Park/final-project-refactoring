@@ -1,16 +1,16 @@
 import { useQueryClient } from '@tanstack/react-query';
-import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore';
+// import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { getCategoryPosts, getFirstPage } from 'api/pageListApi';
+import { getFirstPage } from 'api/pageListApi';
 import { QUERY_KEYS } from 'query/keys';
 import { categoryListState } from 'recoil/posts';
 import TopButton from 'pages/about/components/TopButton';
-import CommunityPostList from './communityPostList/CommunityPostList';
+// import CommunityPostList from './communityPostList/CommunityPostList';
 import St from './style';
 import CommunityPostList02 from './communityPostList/CommunityPostList02';
-import { PostTypeFirebase } from 'types/PostType';
+// import { PostTypeFirebase } from 'types/PostType';
 
 export type Category = 'knowHow' | 'recommendation' | 'sharing' | 'habit' | 'noCategory' | 'total';
 export type SortList = 'popularity' | 'latest';

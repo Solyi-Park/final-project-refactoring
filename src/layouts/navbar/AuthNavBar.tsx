@@ -1,4 +1,5 @@
-import defaultImg from 'assets/defaultImg.jpg';
+// import defaultProfileJPG from 'assets/defaultProfileImg.jpg';
+// import defaultProfileWEBP from 'assets/defaultProfileImg.webp';
 import { useModal } from 'hooks/useModal';
 import { GoChevronDown } from '@react-icons/all-files/go/GoChevronDown';
 import { useNavigate } from 'react-router-dom';
@@ -63,7 +64,7 @@ function AuthNavBar({ styledNav, setIsAuthToggleOpen }: Props) {
       {currentUser ? (
         <>
           <St.UserInfo onClick={() => setIsAuthToggleOpen((prev) => !prev)}>
-            <img src={currentUser?.photoURL ?? defaultImg} alt="profile" />
+            <img src={currentUser?.photoURL ?? '/images/defaultProfileImg.webp'} alt="profile" />
             <span>{currentUser?.displayName}</span>
             <span>
               <GoChevronDown />

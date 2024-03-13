@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import aboutFooterImage from 'assets/about/about-footer.png';
+// import aboutFooterImage from 'assets/about/about-footer.png';
 import St from './style';
 
 function AboutFooter() {
@@ -27,7 +27,10 @@ function AboutFooter() {
         </p>
       </St.AboutFooterLeft>
       <St.AboutFooterRight>
-        <img src={aboutFooterImage} alt="about-footer" />
+        <picture>
+          <source srcSet="about/about-footer.webp" type="image/webp" />
+          <img src="about/about-footer.png" alt="about-footer" />
+        </picture>
         <St.AnimatedCategory key={index}>{categoryList[index]}</St.AnimatedCategory>
       </St.AboutFooterRight>
     </St.AboutFooterContainer>

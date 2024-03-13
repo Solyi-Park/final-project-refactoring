@@ -1,6 +1,8 @@
 import { InfiniteData, useInfiniteQuery, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import mangoCover from 'assets/mangoDefaultCover.png';
-import defaultUserProfile from 'assets/realMango.png';
+// import mangoCoverPNG from 'assets/mangoDefaultCover.png';
+// import mangoCoverWEBP from 'assets/mangoDefaultCover.webp';
+// import mangoLogoPNG from 'assets/realMango.png';
+// import mangoLogoWEBP from 'assets/realMango.webp';
 import Loader from 'components/Loader';
 import PostContentPreview from 'components/PostContentPreview';
 import PostsSkeleton from 'components/mypage/postsSkeleton/PostsSkeleton';
@@ -241,13 +243,13 @@ function CommunityPostList02({ category, sortBy }: PostListProps) {
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.onerror = null;
-                        target.src = mangoCover;
+                        target.src = '/images/mangoDefaultCover.png';
                       }}
                     />
                     <PostInfoContainer>
                       <PostCardHeader>
                         <PostCardHeaderLeft>
-                          <img src={user?.profileImg || defaultUserProfile} alt="profile" />
+                          <img src={user?.profileImg || '/images/realMangoBPNG.png'} alt="profile" />
                           <AuthorNameAndDate>
                             <span>{user?.displayName}</span>
                             <p>{getFormattedDate_yymmdd(post.createdAt!)}</p>
