@@ -56,13 +56,13 @@ const LeftNav = styled.div`
   column-gap: 40px;
   font-size: 16px;
   font-weight: bold;
-  color: ${theme.color.gray};
+  color: ${theme.color.darkgray};
 
   //모바일 (세로)
   @media screen and (max-width: 431px) {
     column-gap: 10px;
     font-size: 10px;
-    color: ${theme.color.gray};
+    color: ${theme.color.darkgray};
     & span {
       display: none;
     }
@@ -110,7 +110,7 @@ const AuthContainer = styled.div`
   display: flex;
   align-items: center;
   column-gap: 20px;
-  color: #888;
+  color: #88888;
   font-size: 14px;
   //모바일 : 세로
   @media screen and (max-width: 431px) {

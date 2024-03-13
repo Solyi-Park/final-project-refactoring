@@ -5,7 +5,7 @@ const FooterContainer = styled.div`
   background-color: ${theme.color.mangoLight};
   width: 100%;
   padding: 10px 120px;
-  color: ${theme.color.gray};
+  color: ${theme.color.darkgray};
 
   @media screen and (max-width: 431px) {
     display: none;
