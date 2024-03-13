@@ -4,7 +4,8 @@ import { useRef } from 'react';
 import { FaRegTrashAlt } from '@react-icons/all-files/fa/FaRegTrashAlt';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { deleteImage, uploadSingleImage } from 'api/postApi';
-import DragNDrop from 'assets/icons/dragndrop.png';
+import dragndropPNG from 'assets/icons/dragndrop.png';
+import dragndropWEBP from 'assets/icons/dragndrop.webp';
 import { useModal } from 'hooks/useModal';
 import { QUERY_KEYS } from 'query/keys';
 import { modalState } from 'recoil/modals';
@@ -221,7 +222,10 @@ function ImageUpload() {
           ref={fileInputRef}
           accept=".jpg,.jpeg,.png"
         />
-        <img src={DragNDrop} alt="cloud-icon" />
+        <picture>
+          <source srcSet="icons/dragndrop.webp" type="image/webp" />
+          <img src="icons/dragndrop.png" alt="dragndrop" />
+        </picture>
         <button>Upload</button>
         <St.UploadTextBox>
           <p>Drag & drop to load</p>

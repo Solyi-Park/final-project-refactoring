@@ -1,6 +1,9 @@
-import figma from 'assets/icons/figma.png';
-import github from 'assets/icons/github-icon.png';
-import logo from 'assets/icons/mango-logo.png';
+// import figmaIconPNG from '/icons/figma.png';
+// import figmaIconWEBP from '/icons/figma.webp';
+// import githubIconPNG from '/icons/github-icon.png';
+// import githubIconWEBP from 'assets/icons/github-icon.webp';
+// import mangoLogoIconPNG from 'assets/icons/mango-logo.png';
+// import mangoLogoIconWEBP from 'assets/icons/mango-logo.webp';
 import { LogoContainerFooter } from 'layouts/navbar/style';
 import { useNavigate } from 'react-router-dom';
 import St from './style';
@@ -13,7 +16,10 @@ function Footer() {
       <St.FooterContentContainer>
         <St.LogoWrapper>
           <LogoContainerFooter>
-            <img src={logo} alt="logo" />
+            <picture>
+              <source srcSet="/icons/mango-logo.webp" type="image/webp" />
+              <img src="/icons/mango-logo.png" alt="logo" />
+            </picture>
             <span onClick={() => navigate('/')}>Mango</span>
           </LogoContainerFooter>
         </St.LogoWrapper>
@@ -24,28 +30,40 @@ function Footer() {
             <St.SingleMember>
               <span>김혜민 Kim</span>
               <a href="https://github.com/zerotonine2da" target="_blank" rel="noopener noreferrer">
-                <img src={github} alt="github" />
+                <picture>
+                  <source srcSet="/icons/github-icon.webp" type="image/webp" />
+                  <img src="/icons/github-icon.png" alt="github-icon" />
+                </picture>
               </a>
             </St.SingleMember>
             <span>|</span>
             <St.SingleMember>
               <span>박솔이 Soli</span>
               <a href="https://github.com/Solyi-Park" target="_blank" rel="noopener noreferrer">
-                <img src={github} alt="github" />
+                <picture>
+                  <source srcSet="/icons/github-icon.webp" type="image/webp" />
+                  <img src="/icons/github-icon.png" alt="github-icon" />
+                </picture>
               </a>
             </St.SingleMember>
             <span>|</span>
             <St.SingleMember>
               <span>박혜민 Ashley</span>
               <a href="https://github.com/hyeomin" target="_blank" rel="noopener noreferrer">
-                <img src={github} alt="github" />
+                <picture>
+                  <source srcSet="/icons/github-icon.webp" type="image/webp" />
+                  <img src="/icons/github-icon.png" alt="github-icon" />
+                </picture>
               </a>
             </St.SingleMember>
             <span>|</span>
             <St.SingleMember>
               <span>박희원 Hailey</span>
               <a href="https://github.com/heeneeee" target="_blank" rel="noopener noreferrer">
-                <img src={github} alt="github" />
+                <picture>
+                  <source srcSet="/icons/github-icon.webp" type="image/webp" />
+                  <img src="/icons/github-icon.png" alt="github-icon" />
+                </picture>
               </a>
             </St.SingleMember>
             <span>|</span>
@@ -56,7 +74,10 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={figma} alt="github" />
+                <picture>
+                  <source srcSet="/icons/figma.webp" type="image/webp" />
+                  <img src="/icons/figma.png" alt="figma-icon" />
+                </picture>
               </a>
             </St.SingleMember>
           </St.TeamInfo>

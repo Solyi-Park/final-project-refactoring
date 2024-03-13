@@ -7,9 +7,10 @@ import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 import { getAdminPosts } from 'api/homeApi';
-import defaultIllustration from 'assets/home/AdminPostIllustration.png';
+// import defaultIllustrationPNG from 'assets/home/AdminPostIllustration.png';
+// import defaultIllustrationWEBP from 'assets/home/AdminPostIllustration.webp';
 import Loader from 'components/Loader';
-import St from '../popularContents/carousel/style';
+// import St from '../popularContents/carousel/style';
 import HomeHeaderCenterBox from './homeHeaderCenterBox/HomeHeaderCenterBox';
 import HomeHeaderSkeleton from './skeleton/HomeHeaderSkeleton';
 import { QUERY_KEYS } from 'query/keys';
@@ -38,45 +39,49 @@ const HomeHeader = () => {
   return (
     <>
       <Container>
-        {isLoading && <HomeHeaderSkeleton />}
-        {adminContents?.length === 0 ? (
-          <St.PlaceHolder>관리자 콘텐츠 데이터를 찾을 수 없습니다.</St.PlaceHolder>
+        {isLoading ? (
+          <HomeHeaderSkeleton />
         ) : (
-          <Swiper
-            onSwiper={setSwiperInstance}
-            onSlideChange={handleSlideChange}
-            centeredSlides={true}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false
-            }}
-            modules={[Autoplay]}
-            className="custom-swiper"
-          >
-            {adminContents &&
-              adminContents.map((item, idx) => {
-                return (
-                  <SwiperSlide key={idx}>
-                    {item ? (
-                      <img
-                        src={(item.coverImages[1] && item.coverImages[1].url) || defaultIllustration}
-                        alt={`Slide ${idx}`}
-                      />
-                    ) : (
-                      <Loader />
-                    )}
-                  </SwiperSlide>
-                );
-              })}
-          </Swiper>
-        )}
-        {adminContents && adminContents?.length > 0 && (
-          <HomeHeaderCenterBox
-            swiperInstance={swiperInstance}
-            setCurrentIndex={setCurrentIndex}
-            currentIndex={currentIndex}
-            adminContents={adminContents}
-          />
+          <>
+            <Swiper
+              onSwiper={setSwiperInstance}
+              onSlideChange={handleSlideChange}
+              centeredSlides={true}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false
+              }}
+              modules={[Autoplay]}
+              className="custom-swiper"
+            >
+              {adminContents &&
+                adminContents.map((item, idx) => {
+                  return (
+                    <SwiperSlide key={idx}>
+                      {item ? (
+                        <picture>
+                          <source srcSet="home/AdminPostIllustration.webp" />
+                          <img
+                            src={(item.coverImages[1] && item.coverImages[1].url) || '/home/AdminPostIllustration.png'}
+                            alt={`Slide ${idx}`}
+                          />
+                        </picture>
+                      ) : (
+                        <Loader />
+                      )}
+                    </SwiperSlide>
+                  );
+                })}
+            </Swiper>
+            {adminContents && adminContents?.length > 0 && (
+              <HomeHeaderCenterBox
+                swiperInstance={swiperInstance}
+                setCurrentIndex={setCurrentIndex}
+                currentIndex={currentIndex}
+                adminContents={adminContents}
+              />
+            )}
+          </>
         )}
       </Container>
     </>

@@ -1,6 +1,8 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { getComments } from 'api/commentApi';
-import { default as MangoLogo, default as defaultUserProfile } from 'assets/realMango.png';
+// import { default as MangoLogo, default as defaultUserProfile } from 'assets/realMango.png';
+// import { default as mangoLogoPNG, default as defaultProfilePNG } from 'assets/realMango.png';
+// import { default as mangoLogoWEBP, default as defaultProfileWEBP } from 'assets/realMango.webp';
 import { AuthContext } from 'context/AuthContext';
 import { useModal } from 'hooks/useModal';
 import { QUERY_KEYS } from 'query/keys';
@@ -129,7 +131,9 @@ const CommentList = ({ foundDetailPost }: FoundDetailPostProps) => {
     <St.CommentListContainer>
       {comments?.length === 0 ? (
         <St.SingleComment>
-          <St.Mango src={MangoLogo} alt="Mango Logo" />
+          <St.Mango>
+            <img src="/images/realMangoBPNG.png" alt="Mango Logo" />
+          </St.Mango>
           <St.CommentDetail>
             <St.NameAndTime>
               <span>망고지기</span>
@@ -142,7 +146,7 @@ const CommentList = ({ foundDetailPost }: FoundDetailPostProps) => {
           const user = users?.find((user) => user.uid === comment.uid);
           return (
             <St.SingleComment key={comment.id}>
-              <img src={user?.profileImg || defaultUserProfile} alt="profile" />
+              <img src={user?.profileImg || '/images/realMangoBPNG.png'} alt="profile" />
               <St.CommentDetail>
                 <St.NameAndTime>
                   <span>{user?.displayName}</span>

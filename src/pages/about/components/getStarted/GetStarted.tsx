@@ -74,7 +74,7 @@ function GetStarted() {
           <St.LinktoPage>
             <Link to="/write" onClick={onAuthCheckHandler}>
               <St.ImageContainer>
-                <img src={write} alt="write" />
+                <img src="about/community.webp" alt="write" />
                 <St.Gradient></St.Gradient>
                 <h5>글쓰러 가기</h5>
               </St.ImageContainer>
@@ -83,7 +83,7 @@ function GetStarted() {
           <St.LinktoPage>
             <Link to="/community" onClick={handleLinkClick}>
               <St.ImageContainer>
-                <img src={community} alt="community" />
+                <img src="about/popular.webp" alt="community" />
                 <St.Gradient></St.Gradient>
                 <h5>게시글 읽으러 가기</h5>
               </St.ImageContainer>
@@ -92,7 +92,7 @@ function GetStarted() {
           <St.LinktoPage>
             <Link to="/home" onClick={handleLinkClickMiddle}>
               <St.ImageContainer>
-                <img src={popular} alt="popular" />
+                <img src="about/popular.webp" alt="popular" />
                 <St.Gradient></St.Gradient>
                 <h5>인기게시물 확인하기</h5>
               </St.ImageContainer>

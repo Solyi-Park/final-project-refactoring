@@ -3,9 +3,9 @@ import { collection, doc, getDocs, query, setDoc, where } from 'firebase/firesto
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import mangofavicon from 'assets/mango-favicon.png';
+// import mangoFavPNG from 'assets/mango-favicon.png';
+// import mangoFavWEBP from 'assets/mango-favicon.webp';
 import { useModal } from 'hooks/useModal';
 import usePrintError from 'hooks/usePrintError';
 import { modalState } from 'recoil/modals';
@@ -299,7 +299,10 @@ function Signup() {
       <St.LogoContainer>
         <St.SubTitle>건강한 친환경 습관 만들기</St.SubTitle>
         <St.LogoBox>
-          <St.MangoLogo src={mangofavicon} />
+          <picture>
+            <source srcSet="images/mango-favicon.webp" type="image/webp" />
+            <St.MangoLogo src="images/mango-favicon.png" />
+          </picture>
           <St.Logo>MANGO</St.Logo>
         </St.LogoBox>
         <St.SignUpTitle>회원가입</St.SignUpTitle>

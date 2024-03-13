@@ -1,6 +1,7 @@
 import { useQueryClient } from '@tanstack/react-query';
 import { getAdminPostList } from 'api/pageListApi';
-import logo from 'assets/icons/mango-logo.png';
+// import mangoLogoIconPNG from 'assets/icons/mango-logo.png';
+// import mangoLogoIconWEBP from 'assets/icons/mango-logo.webp';
 import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore';
 import useOutsideClick from 'hooks/useOutsideClick';
 import AuthToggle from 'pages/auth/components/authToggle/AuthToggle';
@@ -87,7 +88,10 @@ function NavBar() {
       <St.NavBarContainer>
         <St.LeftNav>
           <LogoContainer onClick={() => navigate('/')}>
-            <img src={logo} alt="logo" />
+            <picture>
+              <source srcSet="/icons/mango-logo.webp" type="image/webp" />
+              <img src="/icons/mango-logo.png" alt="logo" />
+            </picture>
             <span>Mango</span>
           </LogoContainer>
           <NavLink to="/about" style={styledNav}>

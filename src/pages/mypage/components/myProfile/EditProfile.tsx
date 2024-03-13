@@ -4,7 +4,7 @@ import React, { useContext, useRef, useState } from 'react';
 import { GoPencil } from '@react-icons/all-files/go/GoPencil';
 import { useSetRecoilState } from 'recoil';
 import { updateProfileImage, updateProfileImageProps, updateProfileInfo, updateProfileInfoProps } from 'api/authApi';
-import defaultImg from 'assets/defaultImg.jpg';
+// import defaultImg from 'assets/defaultProfileImg.jpg';
 import { AuthContext } from 'context/AuthContext';
 import { useModal } from 'hooks/useModal';
 import { QUERY_KEYS } from 'query/keys';
@@ -26,7 +26,7 @@ function EditProfile() {
   const [isPhotoURLChanged, setIsPhotoURLChanged] = useState(false);
   const [isDisplayNameChanged, setIsDisplayNameChanged] = useState(false);
   const [displayName, setDisplayName] = useState(auth.currentUser?.displayName || '');
-  const [profileImage, setProfileImage] = useState(authCurrentUser?.photoURL || defaultImg);
+  const [profileImage, setProfileImage] = useState(authCurrentUser?.photoURL || '/images/defaultProfileImg.jpg');
   const setIsModalOpen = useSetRecoilState(modalState);
   const queryClient = useQueryClient();
 
@@ -260,7 +260,7 @@ function EditProfile() {
               <St.MyImage src={profileImage} alt="defaultImg" />
             </>
           ) : (
-            <St.MyImage src={authCurrentUser?.photoURL || defaultImg} alt="defaultImg" />
+            <St.MyImage src={authCurrentUser?.photoURL || '/images/defaultProfileImg.jpg'} alt="defaultImg" />
           )}
         </St.ProfileImageContainer>
         <St.ProfileInfo>

@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { getAllUsers } from 'api/authApi';
 import { getPopularPosts } from 'api/homeApi';
-import defaultUserProfile from 'assets/realMango.png';
+// import mangoDefaultProfileJPG from 'assets/realMango.png';
+// import mangoDefaultProfileWEBP from 'assets/realMango.webp';
 import PostContentPreview from 'components/PostContentPreview';
 import { AuthContext } from 'context/AuthContext';
 import { useLikeButton } from 'hooks/useLikeButton';
@@ -16,9 +17,10 @@ import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 import { getThumbnailSource } from 'util/getThumbnailSource';
 import CarouselSkeleton from './skeleton/CarouselSkeleton';
-
-import swipeLeft from 'assets/icons/swipeLeft.png';
-import swipeRight from 'assets/icons/swipeRight.png';
+// import swipeLeftPNG from 'assets/icons/swipeLeft.png';
+// import swipeLeftWEBP from 'assets/icons/swipeLeft.webp';
+// import swipeRightPNG from 'assets/icons/swipeRight.png';
+// import swipeRightWEBP from 'assets/icons/swipeRight.webp';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import St from './style';
@@ -50,6 +52,7 @@ const Carousel = () => {
     queryFn: getAllUsers,
     staleTime: 60_000 * 5
   });
+  console.log('users', users);
 
   if (usersError) {
     console.log('users 데이터 가져오기 실패!', usersError);
@@ -122,7 +125,7 @@ const Carousel = () => {
                         <St.SlideHeader>
                           <div>
                             <St.UserProfileImage>
-                              <img src={user?.profileImg || defaultUserProfile} alt="profile" />
+                              <img src={user?.profileImg || '/images/realMangoBPNG.png'} alt="profile" />
                             </St.UserProfileImage>
                             <St.UserProfileName>
                               <span>{user?.displayName}</span>
@@ -169,9 +172,21 @@ const Carousel = () => {
       )}
       {popularPosts && (
         <St.NavigationButtonContainer>
-          <div onClick={goPrev}>{currentIndex > 0 && <img src={swipeLeft} alt="Previous" />}</div>
+          <div onClick={goPrev}>
+            {currentIndex > 0 && (
+              <picture>
+                <source srcSet="icons/swipeLeft.webp" type="image/webp" />
+                <img src="icons/swipeLeft.png" alt="previous" />
+              </picture>
+            )}
+          </div>
           <div onClick={goNext}>
-            {currentIndex < Math.floor(popularPosts.length - slidesPerView) && <img src={swipeRight} alt="Next" />}
+            {currentIndex < Math.floor(popularPosts.length - slidesPerView) && (
+              <picture>
+                <source srcSet="icons/swipeRight.webp" type="image/webp" />
+                <img src="icons/swipeRight.png" alt="next" />
+              </picture>
+            )}
           </div>
         </St.NavigationButtonContainer>
       )}

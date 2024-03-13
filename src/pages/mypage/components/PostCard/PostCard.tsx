@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import defaultProfile from 'assets/defaultImg.jpg';
+// import defaultProfileWEBP from 'assets/defaultProfileImg.webp';
+// import defaultProfileJPG from 'assets/defaultProfileImg.jpg';
 import PostContentPreview from 'components/PostContentPreview';
 import { AuthContext } from 'context/AuthContext';
 import { arrayRemove, arrayUnion, doc, getDoc, updateDoc } from 'firebase/firestore';
@@ -109,7 +110,7 @@ function PostCard({ post }: PostCardProps) {
       <PostInfoContainer>
         <PostCardHeader>
           <PostCardHeaderLeft>
-            <img src={user?.profileImg || defaultProfile} alt="profile" />
+            <img src={user?.profileImg || '/images/defaultProfileImg.jpeg'} alt="profile" />
             <AuthorNameAndDate>
               <span>{user?.displayName}</span>
               <p>{getFormattedDate_yymmdd(post.createdAt!)}</p>

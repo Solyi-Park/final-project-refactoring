@@ -278,10 +278,13 @@ const NavigationButtonContainer = styled.div`
 
   & div {
     cursor: pointer;
+    width: 60px;
+    height: 60px;
   }
 
   & img {
-    width: 60px;
+    width: 100%;
+    height: 100%;
   }
 
   @media screen and (max-width: 431px) {

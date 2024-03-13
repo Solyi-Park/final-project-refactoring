@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { isSignUpState } from 'recoil/users';
-import editNdeleteToggleBox from 'assets/editndeletetoggle.png';
+// import editNdeleteToggleBox from 'assets/editndeletetoggle.png';
 import { isAuthState } from 'recoil/modals';
 
 type ModalProps = {
@@ -60,7 +60,7 @@ const ModalBackdrop = styled.div`
 `;
 
 const ModalContent = styled.div`
-  background-image: url(${editNdeleteToggleBox});
+  background-image: url('/images/editndeletetoggle.png');
   background-size: 100%;
   background-repeat: no-repeat;
   background-color: transparent;

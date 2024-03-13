@@ -1,5 +1,7 @@
-import swipeLeft from 'assets/icons/swipeLeft.png';
-import swipeRight from 'assets/icons/swipeRight.png';
+// import swipeLeftPNG from 'assets/icons/swipeLeft.png';
+// import swipeLeftWEBP from 'assets/icons/swipeLeft.webp';
+// import swipeRightPNG from 'assets/icons/swipeRight.png';
+// import swipeRightWEBP from 'assets/icons/swipeRight.webp';
 import useSwiperNavigation from 'hooks/useSwiperNavigation';
 import { useState } from 'react';
 import 'swiper/css';
@@ -47,8 +49,22 @@ function DetailHeader({ foundDetailPost }: FoundDetailPostProps) {
             })}
           </St.StyledSwiper>
           <St.NavigationButtonContainer>
-            <div onClick={goPrev}>{currentIndex > 0 && <img src={swipeLeft} alt="Previous" />}</div>
-            <div onClick={goNext}>{currentIndex < coverImages.length - 1 && <img src={swipeRight} alt="Next" />}</div>
+            <div onClick={goPrev}>
+              {currentIndex > 0 && (
+                <picture>
+                  <source srcSet="images/icons/swipeLeft.webp" type="image/webp" />
+                  <img src="images/icons/swipeLeft.png" alt="previous" />
+                </picture>
+              )}
+            </div>
+            <div onClick={goNext}>
+              {currentIndex < coverImages.length - 1 && (
+                <picture>
+                  <source srcSet="images/icons/swipeRight.webp" type="image/webp" />
+                  <img src="images/icons/swipeRight.png" alt="next" />
+                </picture>
+              )}
+            </div>
           </St.NavigationButtonContainer>
         </>
       ) : (

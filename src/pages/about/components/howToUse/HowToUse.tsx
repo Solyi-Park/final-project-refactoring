@@ -1,9 +1,9 @@
-import imageOne from 'assets/about/howtouse(1).png';
-import imageTwo from 'assets/about/howtouse(2).png';
-import imageThree from 'assets/about/howtouse(3).png';
-import bubbleOne from 'assets/about/howtouse-bubble(1).png';
-import bubbleTwo from 'assets/about/howtouse-bubble(2).png';
-import bubbleThree from 'assets/about/howtouse-bubble(3).png';
+// import imageOne from 'assets/about/howtouse(1).png';
+// import imageTwo from 'assets/about/howtouse(2).png';
+// import imageThree from 'assets/about/howtouse(3).png';
+// import bubbleOne from 'assets/about/howtouse-bubble(1).png';
+// import bubbleTwo from 'assets/about/howtouse-bubble(2).png';
+// import bubbleThree from 'assets/about/howtouse-bubble(3).png';
 import St from './style';
 
 function HowToUse() {
@@ -15,10 +15,15 @@ function HowToUse() {
         <h3>ECO LIFESTYLE </h3>
       </St.Title>
       <St.UsageExplanation>
-        <img src={imageOne} alt="about-image1" />
-
+        <picture>
+          <source srcSet="about/howtouse(1).webp" type="image/webp" />
+          <img src="about/howtouse(1).png" alt="about-image1" />
+        </picture>
         <St.Bubble>
-          <img src={bubbleOne} alt="about-bubble1" />
+          <picture>
+            <source srcSet="about/howtouse-bubble(1).webp" type="image/webp" />
+            <img src="about/howtouse-bubble(1).png" alt="about-image1" />
+          </picture>
           <St.TextInBubble $left={false}>
             <h5>
               친환경 라이프스타일 습관을 <br />
@@ -33,7 +38,10 @@ function HowToUse() {
       </St.UsageExplanation>
       <St.UsageExplanation>
         <St.Bubble>
-          <img src={bubbleTwo} alt="about-bubble2" />
+          <picture>
+            <source srcSet="about/howtouse-bubble(2).webp" type="image/webp" />
+            <img src="about/howtouse-bubble(2).png" alt="about-image2" />
+          </picture>
           <St.TextInBubble $left={true}>
             <h5>
               재미있고 즐거운 친환경!
@@ -42,12 +50,21 @@ function HowToUse() {
             <p>라이프스타일 노하우, 제품 추천, 제품 나눔 등 타인에게 도움이 될만한 내용을 공유할 수 있어요!</p>
           </St.TextInBubble>
         </St.Bubble>
-        <img src={imageTwo} alt="about-image2" />
+        <picture>
+          <source srcSet="about/howtouse(2).webp" type="image/webp" />
+          <img src="about/howtouse(2).png" alt="about-image2" />
+        </picture>
       </St.UsageExplanation>
       <St.UsageExplanation>
-        <img src={imageThree} alt="about-image3" />
+        <picture>
+          <source srcSet="about/howtouse(3).webp" type="image/webp" />
+          <img src="about/howtouse(3).png" alt="about-image3" />
+        </picture>
         <St.Bubble>
-          <img src={bubbleThree} alt="about-bubble3" />
+          <picture>
+            <source srcSet="about/howtouse-bubble(3).webp" type="image/webp" />
+            <img src="about/howtouse-bubble(3).png" alt="about-image3" />
+          </picture>
           <St.TextInBubble $left={false}>
             <h5>Original Contents by Mango</h5>
             <p>

@@ -1,4 +1,5 @@
-import defaultImg from 'assets/defaultImg.jpg';
+// import defaultProfileJPG from 'assets/defaultProfileImg.jpg';
+// import defaultProfileWEBP from 'assets/defaultProfileImg.webp';
 import { AuthContext } from 'context/AuthContext';
 import { signOut } from 'firebase/auth';
 import { useModal } from 'hooks/useModal';
@@ -92,7 +93,7 @@ function AuthToggle({ setIsAuthToggleOpen }: Props) {
       <St.ToggleBox>
         <span>{authCurrentUser?.email}</span>
         <St.ProfileImageContainer>
-          <img src={authCurrentUser?.photoURL ?? defaultImg} alt="profile" />
+          <img src={authCurrentUser?.photoURL ?? '/images/defaultProfileImg.jpg'} alt="profile" />
         </St.ProfileImageContainer>
         <span>{`안녕하세요, ${authCurrentUser?.displayName}님`}</span>
         <St.ButtonContainer>
