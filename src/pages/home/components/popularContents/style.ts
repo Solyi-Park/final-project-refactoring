@@ -47,7 +47,7 @@ const SubTitle = styled.div`
   }
 
   & button {
-    color: ${theme.color.gray};
+    color: ${theme.color.darkgray};
     background-color: transparent;
     border-color: transparent;
     font-size: 16px;

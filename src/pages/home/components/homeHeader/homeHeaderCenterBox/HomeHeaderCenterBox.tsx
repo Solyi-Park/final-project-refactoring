@@ -45,11 +45,11 @@ function HomeHeaderCenterBox({ swiperInstance, currentIndex, setCurrentIndex, ad
               <p>자세히 보기</p>
             </St.DetailLink>
             <St.NavButtonContainer>
-              <St.NavButton onClick={goPrev}>
+              <St.NavButton onClick={goPrev} aria-label="go-previous-button">
                 <GoChevronLeft />
               </St.NavButton>
               <span>{`${currentIndex + 1} / ${adminContents?.length}`}</span>
-              <St.NavButton onClick={goNext}>
+              <St.NavButton onClick={goNext} aria-label="go-prevous-button">
                 <GoChevronRight />
               </St.NavButton>
             </St.NavButtonContainer>

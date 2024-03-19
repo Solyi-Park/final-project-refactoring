@@ -131,7 +131,7 @@ const Carousel = () => {
                               <span>{user?.displayName}</span>
                             </St.UserProfileName>
                           </div>
-                          <button type="button" onClick={(e) => onClickLikeButton(e, post.id)}>
+                          <button aria-label="like-button" type="button" onClick={(e) => onClickLikeButton(e, post.id)}>
                             {currentUserId && post.likedUsers?.includes(currentUserId) ? (
                               <St.HeartFillIcon />
                             ) : (

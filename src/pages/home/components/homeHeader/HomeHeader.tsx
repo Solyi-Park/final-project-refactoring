@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -7,10 +7,7 @@ import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 import { getAdminPosts } from 'api/homeApi';
-// import defaultIllustrationPNG from 'assets/home/AdminPostIllustration.png';
-// import defaultIllustrationWEBP from 'assets/home/AdminPostIllustration.webp';
 import Loader from 'components/Loader';
-// import St from '../popularContents/carousel/style';
 import HomeHeaderCenterBox from './homeHeaderCenterBox/HomeHeaderCenterBox';
 import HomeHeaderSkeleton from './skeleton/HomeHeaderSkeleton';
 import { QUERY_KEYS } from 'query/keys';
@@ -27,6 +24,20 @@ const HomeHeader = () => {
     queryFn: getAdminPosts,
     staleTime: 60_000
   });
+
+  useEffect(() => {
+    if (!isLoading && adminContents) {
+      // 이미지 URL을 추출하여 프리로드
+      const imageUrls = adminContents
+        .map((content) => content.coverImages && content.coverImages[1]?.url)
+        .filter(Boolean);
+      imageUrls.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+      });
+      console.log('프리로드 완료!');
+    }
+  }, [isLoading, adminContents]);
 
   if (error) {
     console.log('byMango 게시물 가져오기 실패!', error);
