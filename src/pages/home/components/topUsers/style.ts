@@ -38,6 +38,7 @@ const PlaceHolder = styled.div`
 
 const Title = styled.div`
   display: flex;
+  font-size: 19px;
   flex-direction: column;
   width: 100%;
   align-items: flex-start;

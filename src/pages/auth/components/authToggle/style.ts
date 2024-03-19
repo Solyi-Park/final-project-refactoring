@@ -4,7 +4,7 @@ import theme from 'types/styles/theme';
 const ToggleContainer = styled.div`
   display: flex;
   justify-content: end;
-  font-size: 14px;
+  font-size: 16px;
   position: absolute;
   top: 65px;
   right: 200px;
@@ -70,6 +70,7 @@ const AuthButton = styled.button<AuthButtonProps>`
   background-color: ${(props) => props.$bgcolor};
   border: 1px solid ${(props) => props.$bdrcolor};
   cursor: pointer;
+  // font-size: 16px;
 
   @media screen and (max-width: 431px) {
     width: 100px;

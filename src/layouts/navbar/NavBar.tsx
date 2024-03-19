@@ -87,7 +87,7 @@ function NavBar() {
     <St.NavContainer ref={navRef} $isAuth={authCheck}>
       <St.NavBarContainer>
         <St.LeftNav>
-          <LogoContainer onClick={() => navigate('/')}>
+          <LogoContainer onClick={() => navigate('/')} aria-label="Mango-logo">
             <picture>
               <source srcSet="/icons/mango-logo.webp" type="image/webp" />
               <img src="/icons/mango-logo.png" alt="logo" />
