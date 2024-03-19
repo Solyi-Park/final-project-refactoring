@@ -10,18 +10,15 @@
       content="망고는 망가져 가는 지구를 함께 고쳐나가자는 미션을 가지고 있습니다. 친환경 습관을 관리하고 자신의 친환경 습관과 노하우를 사람들과 공유할 수 있는 커뮤니티입니다."
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <script>
-      function initKakao() {
-        Kakao.init('%REACT_APP_KAKAO_API_KEY%');
-      }
-    </script>
+
     <script
-      async
-      src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
-      integrity="%REACT_APP_KAKAO_INTERGRITY%"
+      src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.0/kakao.min.js"
+      integrity="sha384-l+xbElFSnPZ2rOaPrU//2FF5B4LB8FiX5q4fXYTlfcG4PGpMkE1vcL7kNXI6Cci0"
       crossorigin="anonymous"
-      onload="initKakao()"
     ></script>
+    <script>
+      Kakao.init('%REACT_APP_KAKAO_API_KEY%');
+    </script>
 
     <meta property="og:site_name" content="Mango" />
     <meta property="og:title" content="친환경 라이프 스타일 커뮤니티" />
