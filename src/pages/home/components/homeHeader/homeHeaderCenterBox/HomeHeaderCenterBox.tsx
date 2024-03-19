@@ -41,8 +41,8 @@ function HomeHeaderCenterBox({ swiperInstance, currentIndex, setCurrentIndex, ad
         </St.HeaderText>
         <St.ButtonContainer>
           <St.FlexBox>
-            <St.DetailLink to={`/detail/${postId}`}>
-              <p>자세히 보기</p>
+            <St.DetailLink to={`/detail/${postId}`} aria-label="포스트 세부 정보 보기">
+              <p>글 읽으러 가기</p>
             </St.DetailLink>
             <St.NavButtonContainer>
               <St.NavButton onClick={goPrev} aria-label="go-previous-button">

@@ -38,7 +38,7 @@ const SubTitle = styled.div`
   align-items: center;
   & p {
     color: ${theme.color.mangoMain};
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 600;
 
     @media screen and (max-width: 431px) {

@@ -5,7 +5,8 @@ const FooterContainer = styled.div`
   background-color: ${theme.color.mangoLight};
   width: 100%;
   padding: 10px 120px;
-  color: ${theme.color.darkgray};
+  // color: ${theme.color.darkgray};
+  color: #111;
 
   @media screen and (max-width: 431px) {
     display: none;
@@ -35,6 +36,8 @@ const FooterText = styled.div`
   flex-direction: column;
   align-items: end;
   row-gap: 15px;
+  font-size: 16px;
+  // font-weight: 600;
 `;
 
 const TeamInfo = styled.div`
@@ -65,6 +68,7 @@ const CopyrightBox = styled.div`
   width: 100%;
   align-items: baseline;
   font-size: 14px;
+
   padding: 20px 0;
 `;
 
