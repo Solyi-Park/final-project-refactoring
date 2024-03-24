@@ -52,7 +52,6 @@ const Carousel = () => {
     queryFn: getAllUsers,
     staleTime: 60_000 * 5
   });
-  console.log('users', users);
 
   if (usersError) {
     console.log('users 데이터 가져오기 실패!', usersError);

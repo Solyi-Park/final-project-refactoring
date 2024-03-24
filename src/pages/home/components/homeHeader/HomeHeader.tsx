@@ -27,7 +27,6 @@ const HomeHeader = () => {
 
   useEffect(() => {
     if (!isLoading && adminContents) {
-      // 이미지 URL을 추출하여 프리로드
       const imageUrls = adminContents
         .map((content) => content.coverImages && content.coverImages[1]?.url)
         .filter(Boolean);
@@ -35,7 +34,6 @@ const HomeHeader = () => {
         const img = new Image();
         img.src = url;
       });
-      console.log('프리로드 완료!');
     }
   }, [isLoading, adminContents]);
 
