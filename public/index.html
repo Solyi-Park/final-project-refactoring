@@ -11,15 +11,6 @@
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <script
-      src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.0/kakao.min.js"
-      integrity="sha384-l+xbElFSnPZ2rOaPrU//2FF5B4LB8FiX5q4fXYTlfcG4PGpMkE1vcL7kNXI6Cci0"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      Kakao.init('%REACT_APP_KAKAO_API_KEY%');
-    </script>
-
     <meta property="og:site_name" content="Mango" />
     <meta property="og:title" content="친환경 라이프 스타일 커뮤니티" />
     <meta property="og:url" content="http://mymango.today" />
@@ -33,5 +24,13 @@
   </head>
   <body>
     <div id="root"></div>
+    <script
+      src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.0/kakao.min.js"
+      integrity="sha384-l+xbElFSnPZ2rOaPrU//2FF5B4LB8FiX5q4fXYTlfcG4PGpMkE1vcL7kNXI6Cci0"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      Kakao.init('%REACT_APP_KAKAO_API_KEY%');
+    </script>
   </body>
 </html>
