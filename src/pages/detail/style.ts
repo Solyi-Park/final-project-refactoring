@@ -4,6 +4,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
+  min-width: 1600px;
   width: 100%;
   max-width: 1200px;
   margin: 0 30px;
@@ -12,6 +13,7 @@ const Container = styled.div`
 
 const DetailEmptyFooter = styled.div`
   height: 280px;
+  background-color: red;
 
   //모바일 세로
   @media screen and (max-width: 431px) {

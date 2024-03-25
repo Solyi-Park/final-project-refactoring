@@ -77,6 +77,7 @@ const EditNDeleteContainer = styled.div`
 `;
 
 const ContentBody = styled.div`
+  min-height: 310px;
   color: ${theme.color.darkgray};
   padding: 40px 0;
   border-bottom: 1px solid ${theme.color.lightgray};

@@ -110,7 +110,7 @@ const AuthContainer = styled.div`
   display: flex;
   align-items: center;
   column-gap: 20px;
-  color: #88888;
+  color: #888888;
   font-size: 14px;
   //모바일 : 세로
   @media screen and (max-width: 431px) {

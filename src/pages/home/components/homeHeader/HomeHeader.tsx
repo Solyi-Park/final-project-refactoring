@@ -7,7 +7,6 @@ import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 import { getAdminPosts } from 'api/homeApi';
-import Loader from 'components/Loader';
 import HomeHeaderCenterBox from './homeHeaderCenterBox/HomeHeaderCenterBox';
 import HomeHeaderSkeleton from './skeleton/HomeHeaderSkeleton';
 import { QUERY_KEYS } from 'query/keys';
@@ -67,14 +66,10 @@ const HomeHeader = () => {
                 adminContents.map((item, idx) => {
                   return (
                     <SwiperSlide key={idx}>
-                      {item ? (
-                        <img
-                          src={(item.coverImages[1] && item.coverImages[1].url) || '/home/AdminPostIllustration.png'}
-                          alt={`Slide ${idx}`}
-                        />
-                      ) : (
-                        <Loader />
-                      )}
+                      <img
+                        src={(item.coverImages[1] && item.coverImages[1].url) || '/home/AdminPostIllustration.png'}
+                        alt={`Slide ${idx}`}
+                      />
                     </SwiperSlide>
                   );
                 })}
