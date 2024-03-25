@@ -59,18 +59,19 @@ function Detail() {
           <AddCommentForm foundDetailPost={foundDetailPost!} />
           <CommentSkeleton />
           <PostShift postId={id} />
+          <St.DetailEmptyFooter></St.DetailEmptyFooter>
         </>
       )}
       {!isLoading && foundDetailPost && (
         <>
-          <DetailHeader foundDetailPost={foundDetailPost} isLoading={isLoading} />
-          <DetailBody foundDetailPost={foundDetailPost} isLoading={isLoading} />
-          <AddCommentForm foundDetailPost={foundDetailPost} isLoading={isLoading} />
-          <CommentList foundDetailPost={foundDetailPost} isLoading={isLoading} />
+          <DetailHeader foundDetailPost={foundDetailPost} />
+          <DetailBody foundDetailPost={foundDetailPost} />
+          <AddCommentForm foundDetailPost={foundDetailPost} />
+          <CommentList foundDetailPost={foundDetailPost} />
           <PostShift postId={id} />
+          <St.DetailEmptyFooter></St.DetailEmptyFooter>
         </>
       )}
-      <St.DetailEmptyFooter></St.DetailEmptyFooter>
     </St.Container>
   );
 }

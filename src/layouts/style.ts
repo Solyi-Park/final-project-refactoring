@@ -16,6 +16,7 @@ const LayoutContainer = styled.div<LayoutProps>`
 
 const MainWrapper = styled.div`
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   align-items: center;
   margin: 60px auto 0 auto;
